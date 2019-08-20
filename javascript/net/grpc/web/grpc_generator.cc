@@ -1287,8 +1287,7 @@ class GrpcCodeGenerator : public CodeGenerator {
       generate_dts = true;
     } else if (import_style_str == "typescript") {
       import_style = ImportStyle::TYPESCRIPT;
-      file_name =
-          UppercaseFirstLetter(StripProto(file->name())) + "ServiceClientPb.ts";
+      file_name = StripProto(file->name()) + "ServiceClientPb.ts";
     } else {
       *error = "options: invalid import_style - " + import_style_str;
       return false;
